@@ -1,0 +1,7 @@
+image: debian/sid
+packages:
+  - tox
+sources:
+  - https://github.com/McSinyx/spider-venom
+tasks:
+  - lint: tox -c spider-venom
