@@ -104,8 +104,12 @@ and look for the content images
        """Download vaccine images from the given VnExpress article."""
        article = await client.get(url)
        for img in parse_html5(article.text).iterfind('.//img'):
-           if img.get('itemprop') == 'contentUrl':
-               nursery.start_soon(download, img, dest, client)
+           caption, url = img.get('alt'), img.get('data-src')
+           if caption is None or 'vaccine' not in caption.lower(): continue
+           # VnExpress gives different HTML depending on the client.
+           if url is None: url = img.get('src')
+           if url.endswith('logo.svg'): continue
+           nursery.start_soon(download, caption, url, dest, client)
 
 The ``async`` function ``download`` takes care of the rest of the work,
 namely fetching and putting the images and caption in the specified location:
@@ -116,10 +120,8 @@ namely fetching and putting the images and caption in the specified location:
    from urllib.parse import urlparse
    from trio import open_file
 
-   async def download(img, dest, client):
+   async def download(caption, url, dest, client):
        """Save the given image with caption if it's about vaccine."""
-       caption, url = img.get('alt'), img.get('data-src')
-       if 'vaccine' not in caption.lower(): return
        name, ext = splitext(basename(urlparse(url).path))
        directory = dest / name
        await directory.mkdir(parents=True, exist_ok=True)

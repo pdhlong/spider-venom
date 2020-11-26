@@ -37,10 +37,8 @@ def articles(links):
         if url.endswith('.html') and 'vaccine' in url: yield url
 
 
-async def download(img, dest, client):
+async def download(caption, url, dest, client):
     """Save the given image with caption if it's about vaccine."""
-    caption, url = img.get('alt'), img.get('data-src')
-    if 'vaccine' not in caption.lower(): return
     name, ext = splitext(basename(urlparse(url).path))
     directory = dest / name
     await directory.mkdir(parents=True, exist_ok=True)
@@ -59,8 +57,12 @@ async def scrape_images(url, dest, client, nursery):
     """Download vaccine images from the given VnExpress article."""
     article = await client.get(url)
     for img in parse_html5(article.text).iterfind('.//img'):
-        if img.get('itemprop') == 'contentUrl':
-            nursery.start_soon(download, img, dest, client)
+        caption, url = img.get('alt'), img.get('data-src')
+        if caption is None or 'vaccine' not in caption.lower(): continue
+        # VnExpress gives different HTML depending on the client.
+        if url is None: url = img.get('src')
+        if url.endswith('logo.svg'): continue
+        nursery.start_soon(download, caption, url, dest, client)
 
 
 async def vnexpress(dest, client, nursery):

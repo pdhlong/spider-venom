@@ -29,7 +29,7 @@ html_show_copyright = False
 
 # Generate the result page
 with open('results.rst', 'w') as results:
-    results.write('Scraped images and captions\n'
-                  '===========================\n')
+    results.write('Scraped images and their captions\n'
+                  '=================================\n')
     for image in iglob('venom/*/*/image.*'):
         results.write(FIGURE.format(image, join(dirname(image), 'caption')))
