@@ -51,7 +51,7 @@ async def download(img, dest, client):
         return
     async with await open_file(directory/f'image{ext}', 'wb') as fo:
         async for chunk in fi.aiter_bytes(): await fo.write(chunk)
-    await (directory/'caption').write_text(caption)
+    await (directory/'caption').write_text(caption, encoding='utf-8')
     print(caption)
 
 
@@ -60,7 +60,7 @@ async def scrape_images(url, dest, client, nursery):
     article = await client.get(url)
     for img in parse_html5(article.text).iterfind('.//img'):
         if img.get('itemprop') == 'contentUrl':
-            nursery.start_soon(download, img, client, dest)
+            nursery.start_soon(download, img, dest, client)
 
 
 async def vnexpress(dest, client, nursery):
