@@ -5,9 +5,65 @@ Scraped images and their captions
 
    .. include:: venom/tuoitre/photo-1-16038675759312109833464/caption
 
+.. figure:: venom/tuoitre/2020-11-16t124930z1044452483rc2c4k9qa8k0rtrmadp3global-markets-16055855689001320489872/image.jpg
+
+   .. include:: venom/tuoitre/2020-11-16t124930z1044452483rc2c4k9qa8k0rtrmadp3global-markets-16055855689001320489872/caption
+
+.. figure:: venom/tuoitre/antivax-4-160543557913384519662/image.jpg
+
+   .. include:: venom/tuoitre/antivax-4-160543557913384519662/caption
+
+.. figure:: venom/tuoitre/vaccine-1602600371211611889236/image.jpg
+
+   .. include:: venom/tuoitre/vaccine-1602600371211611889236/caption
+
+.. figure:: venom/tuoitre/antivax-3-16054355791312032019007/image.jpg
+
+   .. include:: venom/tuoitre/antivax-3-16054355791312032019007/caption
+
+.. figure:: venom/tuoitre/photo-1-1605856073937302076828/image.jpeg
+
+   .. include:: venom/tuoitre/photo-1-1605856073937302076828/caption
+
+.. figure:: venom/tuoitre/5f71dadb74fe5b0018a8db55-160196188353582351146/image.jpeg
+
+   .. include:: venom/tuoitre/5f71dadb74fe5b0018a8db55-160196188353582351146/caption
+
+.. figure:: venom/tuoitre/antivax-2-16054355791291770812259/image.jpg
+
+   .. include:: venom/tuoitre/antivax-2-16054355791291770812259/caption
+
+.. figure:: venom/tuoitre/2020-11-21t134205z645054682rc2p7k95y0h3rtrmadp3health-coronavirus-moderna-eu-1606006477784465375289/image.jpg
+
+   .. include:: venom/tuoitre/2020-11-21t134205z645054682rc2p7k95y0h3rtrmadp3health-coronavirus-moderna-eu-1606006477784465375289/caption
+
+.. figure:: venom/tuoitre/antivax-1-16054355791241317568480/image.jpg
+
+   .. include:: venom/tuoitre/antivax-1-16054355791241317568480/caption
+
+.. figure:: venom/tuoitre/photo-1-16061876082791863473175/image.jpeg
+
+   .. include:: venom/tuoitre/photo-1-16061876082791863473175/caption
+
 .. figure:: venom/tuoitre/photo-1-16032624202431133977485/image.jpg
 
    .. include:: venom/tuoitre/photo-1-16032624202431133977485/caption
+
+.. figure:: venom/tuoitre/download-8-16019624573541598004097/image.jpeg
+
+   .. include:: venom/tuoitre/download-8-16019624573541598004097/caption
+
+.. figure:: venom/tuoitre/nicolas-1601869503171930832001/image.jpg
+
+   .. include:: venom/tuoitre/nicolas-1601869503171930832001/caption
+
+.. figure:: venom/tuoitre/2020-09-25t020947z740425807rc2e5j9j6lsbrtrmadp3health-coronavirus-usa-16019601375161271836815/image.jpg
+
+   .. include:: venom/tuoitre/2020-09-25t020947z740425807rc2e5j9j6lsbrtrmadp3health-coronavirus-usa-16019601375161271836815/caption
+
+.. figure:: venom/tuoitre/photo-1-1599543403772646666043/image.jpg
+
+   .. include:: venom/tuoitre/photo-1-1599543403772646666043/caption
 
 .. figure:: venom/vnexpress/nghien-cuu-vaccine-4422-1606138853/image.jpg
 
@@ -36,6 +92,10 @@ Scraped images and their captions
 .. figure:: venom/vnexpress/merlin-179814729-79bd3373-91d1-2034-5672-1605771710/image.jpg
 
    .. include:: venom/vnexpress/merlin-179814729-79bd3373-91d1-2034-5672-1605771710/caption
+
+.. figure:: venom/vnexpress/merlin-180213495-1db99cf7-de7f-8558-8386-1606462482/image.jpg
+
+   .. include:: venom/vnexpress/merlin-180213495-1db99cf7-de7f-8558-8386-1606462482/caption
 
 .. figure:: venom/vnexpress/Vaccine-Covid-19-4-1593609617-3429-3610-1605660010/image.jpg
 
