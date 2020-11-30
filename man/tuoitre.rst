@@ -42,20 +42,20 @@ articles():
 .. code-block:: python
 	
 	def articles(links):
-    """Search for URLs contains 'vacxin' in the given link."""
-    for a in links:
-        href = a.get('href')
-        if href is None: continue
-        url = 'http://tuoitre.vn' + href
-        if url.endswith('.htm') and 'vac' in url: yield url
+    		"""Search for URLs contains 'vacxin' in the given link."""
+   		for a in links:
+       			href = a.get('href')
+        		if href is None: continue
+        		url = 'http://tuoitre.vn' + href
+        		if url.endswith('.htm') and 'vac' in url: yield url
 		
 From the <a> tags from we try to get the href attribute of each <a>. Since some <a> have no href attribute, 
 we will skip if the href returns None. To make the href become a recognized url, we add 'http://tuoitre.vn' 
 before the href. Finally, in order to get the appropriate articles related to vaccine, we only get the url end 
 with '.htm' and contains 'vac'.
 
-scrape_image()
-^^^^^^^^^^^^^^
+scrape_image():
+^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
