@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scraping vaccine images from tuoitre &#8212; spider-venom  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="scraping-vaccine-images-from-tuoitre">
+<h1>Scraping vaccine images from tuoitre<a class="headerlink" href="#scraping-vaccine-images-from-tuoitre" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="site-analysis">
+<h2>Site analysis<a class="headerlink" href="#site-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The site that we are going to work with to get the articles about vaccine from tuoitre.vn is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tuoitre</span><span class="o">.</span><span class="n">vn</span><span class="o">/</span><span class="n">vaccine</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Different form VnExpress, the href provided in &lt;a&gt; can’t directly link to the articles, moreover, some &lt;a&gt;
+have no href attribute. For example:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/vac-xin-covid-19-cua-astrazeneca-bi-che-bai-do-gia-mem-20201127105727613.htm&quot;</span>
+   <span class="na">title</span><span class="o">=</span><span class="s">&quot;V&amp;#7855;c xin COVID-19 c&amp;#7911;a AstraZeneca b&amp;#7883; chê bai do... giá m&amp;#7873;m?&quot;</span>
+   <span class="na">class</span><span class="o">=</span><span class="s">&quot;img212x132 pos-rlt&quot;</span> <span class="na">data-displayinslide</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;refresh-captcha&quot;</span><span class="p">&gt;</span>Lấy mã mới<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>For the images and their captions in the articles, we will try to get the ‘src’ - image source and
+‘alt’ - image caption of the &lt;img&gt; tag.</p>
+</div>
+<div class="section" id="scraping-explanation">
+<h2>Scraping explanation<a class="headerlink" href="#scraping-explanation" title="Permalink to this headline">¶</a></h2>
+<p>The site that will be worked with is defined as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">INDEX</span> <span class="o">=</span> <span class="s1">&#39;https://tuoitre.vn/vaccine.html&#39;</span>
+</pre></div>
+</div>
+<p>Then it is fetched and parsed in order to find all the available &lt;a&gt; tag.</p>
+<p>The scraper then focuses on 3 main functions articles(), scrape_image() and download().</p>
+<p>articles():</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">articles</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Search for URLs contains &#39;vacxin&#39; in the given link.&quot;&quot;&quot;</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="n">href</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">href</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://tuoitre.vn&#39;</span> <span class="o">+</span> <span class="n">href</span>
+    <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.htm&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;vac&#39;</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span> <span class="k">yield</span> <span class="n">url</span>
+</pre></div>
+</div>
+<p>From the &lt;a&gt; tags from we try to get the href attribute of each &lt;a&gt;. Since some &lt;a&gt; have no href attribute,
+we will skip if the href returns None. To make the href become a recognized url, we add ‘<a class="reference external" href="http://tuoitre.vn">http://tuoitre.vn</a>’
+before the href. Finally, in order to get the appropriate articles related to vaccine, we only get the url end
+with ‘.htm’ and contains ‘vac’.</p>
+<p>scrape_image()</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">scrape_images</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">nursery</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Search for img in the articles in order to download the images.&quot;&quot;&quot;</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">parse_html5</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">iterfind</span><span class="p">(</span><span class="s1">&#39;.//img&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;photo&#39;</span><span class="p">:</span>
+                        <span class="n">nursery</span><span class="o">.</span><span class="n">start_soon</span><span class="p">(</span><span class="n">download</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The appropriate urls are then fetched and parsed in order to find all the &lt;img&gt; tags available.
+We notice that the main images of the articles all have type=”photo” so we only have get the
+&lt;img&gt; satisfied the condition without having to check the captions’ contents.</p>
+<p>download():</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Save the images with theirs captions of the searched articles.&quot;&quot;&quot;</span>
+<span class="n">caption</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">splitext</span><span class="p">(</span><span class="n">basename</span><span class="p">(</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">path</span><span class="p">))</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="n">dest</span> <span class="o">/</span> <span class="n">name</span>
+<span class="k">await</span> <span class="n">directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">fi</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ConnectTimeout</span><span class="p">:</span>
+    <span class="k">return</span>
+<span class="k">async</span> <span class="k">with</span> <span class="k">await</span> <span class="n">open_file</span><span class="p">(</span><span class="n">directory</span><span class="o">/</span><span class="sa">f</span><span class="s1">&#39;image</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fo</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">aiter_bytes</span><span class="p">():</span> <span class="k">await</span> <span class="n">fo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+<span class="k">await</span> <span class="p">(</span><span class="n">directory</span><span class="o">/</span><span class="s1">&#39;caption&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">caption</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caption</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Last one is the download() function. It will do all the work remaining. It will download the
+image from ‘src’ and the caption from ‘alt’. Each image and its caption is then put in the same
+folder and named “image”, “caption” respectively.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="index.html">spider-venom</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vnexpress.html">Scraping vaccine images from VnExpress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Scraped images and their captions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/tuoitre.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
