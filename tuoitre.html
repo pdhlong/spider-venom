@@ -49,8 +49,8 @@ have no href attribute. For example:</p>
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;refresh-captcha&quot;</span><span class="p">&gt;</span>Lấy mã mới<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>For the images and their captions in the articles, we will try to get the <code class="docutils literal notranslate"><span class="pre">src</span></code> - image source and
-<code class="docutils literal notranslate"><span class="pre">alt</span></code> - image caption of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag.</p>
+<p>For the images and their captions in the articles, we will try to get the <code class="docutils literal notranslate"><span class="pre">src</span></code> —image source and
+<code class="docutils literal notranslate"><span class="pre">alt</span></code> —image caption of the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag.</p>
 </div>
 <div class="section" id="scraping-explanation">
 <h2>Scraping explanation<a class="headerlink" href="#scraping-explanation" title="Permalink to this headline">¶</a></h2>
@@ -61,7 +61,7 @@ have no href attribute. For example:</p>
 <p>Then it is fetched and parsed in order to find all the available <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tag.</p>
 <p>The scraper then focuses on 3 main functions articles(), scrape_image() and download().</p>
 <div class="section" id="articles">
-<h3>articles():<a class="headerlink" href="#articles" title="Permalink to this headline">¶</a></h3>
+<h3>articles()<a class="headerlink" href="#articles" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">articles</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Search for URLs contains &#39;vacxin&#39; in the given link.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
@@ -72,12 +72,12 @@ have no href attribute. For example:</p>
 </pre></div>
 </div>
 <p>From the <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tags from we try to get the href attribute of each <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>. Since some <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> have no href attribute,
-we will skip if the href returns None. To make the href become a recognized url, we add ‘<a class="reference external" href="http://tuoitre.vn">http://tuoitre.vn</a>’
+we will skip if the href returns None. To make the href become a recognized url, we add <code class="docutils literal notranslate"><span class="pre">http://tuoitre.vn</span></code>
 before the href. Finally, in order to get the appropriate articles related to vaccine, we only get the url end
-with ‘.htm’ and contains ‘vac’.</p>
+with <code class="docutils literal notranslate"><span class="pre">.htm</span></code> and contains <code class="docutils literal notranslate"><span class="pre">vac</span></code>.</p>
 </div>
 <div class="section" id="scrape-image">
-<h3>scrape_image():<a class="headerlink" href="#scrape-image" title="Permalink to this headline">¶</a></h3>
+<h3>scrape_image()<a class="headerlink" href="#scrape-image" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">scrape_images</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">nursery</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Search for img in the articles in order to download the images.&quot;&quot;&quot;</span>
     <span class="n">article</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -91,7 +91,7 @@ We notice that the main images of the articles all have <code class="docutils li
 <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> satisfied the condition without having to check the captions’ contents.</p>
 </div>
 <div class="section" id="download">
-<h3>download():<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<h3>download()<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Save the images with theirs captions of the searched articles.&quot;&quot;&quot;</span>
         <span class="n">caption</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span>

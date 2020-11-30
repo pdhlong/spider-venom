@@ -19,8 +19,8 @@ have no href attribute. For example:
 	   
    <a id="refresh-captcha">Lấy mã mới</a>
 
-For the images and their captions in the articles, we will try to get the ``src`` - image source and 
-``alt`` - image caption of the ``<img>`` tag. 
+For the images and their captions in the articles, we will try to get the ``src`` ---image source and 
+``alt`` ---image caption of the ``<img>`` tag. 
 
 Scraping explanation
 --------------------
@@ -35,8 +35,8 @@ Then it is fetched and parsed in order to find all the available ``<a>`` tag.
 
 The scraper then focuses on 3 main functions articles(), scrape_image() and download().
 
-articles():
-^^^^^^^^^^^
+articles()
+^^^^^^^^^^
 
 .. code-block:: python
 	
@@ -49,12 +49,12 @@ articles():
            if url.endswith('.htm') and 'vac' in url: yield url
 		
 From the ``<a>`` tags from we try to get the href attribute of each ``<a>``. Since some ``<a>`` have no href attribute, 
-we will skip if the href returns None. To make the href become a recognized url, we add 'http://tuoitre.vn' 
+we will skip if the href returns None. To make the href become a recognized url, we add ``http://tuoitre.vn`` 
 before the href. Finally, in order to get the appropriate articles related to vaccine, we only get the url end 
-with '.htm' and contains 'vac'.
+with ``.htm`` and contains ``vac``.
 
-scrape_image():
-^^^^^^^^^^^^^^^
+scrape_image()
+^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -69,8 +69,8 @@ The appropriate urls are then fetched and parsed in order to find all the ``<img
 We notice that the main images of the articles all have ``type="photo"`` so we only have get the 
 ``<img>`` satisfied the condition without having to check the captions' contents.
 
-download():
-^^^^^^^^^^^
+download()
+^^^^^^^^^^
 
 .. code-block:: python
 
