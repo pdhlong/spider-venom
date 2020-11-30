@@ -37,6 +37,7 @@ Then it is fetched and parsed in order to find all the available <a> tag.
 The scraper then focuses on 3 main functions articles(), scrape_image() and download().
 
 articles():
+^^^^^^^^^^^
 
 .. code-block:: python
 	
@@ -54,6 +55,7 @@ before the href. Finally, in order to get the appropriate articles related to va
 with '.htm' and contains 'vac'.
 
 scrape_image()
+^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -69,24 +71,25 @@ We notice that the main images of the articles all have type="photo" so we only 
 <img> satisfied the condition without having to check the captions' contents.
 
 download():
+^^^^^^^^^^^
 
 .. code-block:: python
 
 	async def download(img, dest, client):
-    """Save the images with theirs captions of the searched articles."""
-    caption, url = img.get('alt'), img.get('src')
-    name, ext = splitext(basename(urlparse(url).path))
-    directory = dest / name
-    await directory.mkdir(parents=True, exist_ok=True)
-
-    try:
-        fi = await client.get(url)
-    except ConnectTimeout:
-        return
-    async with await open_file(directory/f'image{ext}', 'wb') as fo:
-        async for chunk in fi.aiter_bytes(): await fo.write(chunk)
-    await (directory/'caption').write_text(caption, encoding='utf-8')
-    print(caption)
+		"""Save the images with theirs captions of the searched articles."""
+		caption, url = img.get('alt'), img.get('src')
+		name, ext = splitext(basename(urlparse(url).path))
+		directory = dest / name
+		await directory.mkdir(parents=True, exist_ok=True)
+		
+		try:
+			fi = await client.get(url)
+		except ConnectTimeout:
+			return
+		async with await open_file(directory/f'image{ext}', 'wb') as fo:
+			async for chunk in fi.aiter_bytes(): await fo.write(chunk)
+		await (directory/'caption').write_text(caption, encoding='utf-8')
+			print(caption)
 	
 Last one is the download() function. It will do all the work remaining. It will download the 
 image from 'src' and the caption from 'alt'. Each image and its caption is then put in the same
