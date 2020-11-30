@@ -5,4 +5,5 @@ Scraping vaccine images from Vietnamese news
    :maxdepth: 2
 
    vnexpress
+   tuoitre
    results
