@@ -17,6 +17,10 @@ Scraped images and their captions
 
    .. include:: venom/tuoitre/vaccine-1602600371211611889236/caption
 
+.. figure:: venom/tuoitre/phan-phoi-anh-1-16064487113191928554769/image.jpg
+
+   .. include:: venom/tuoitre/phan-phoi-anh-1-16064487113191928554769/caption
+
 .. figure:: venom/tuoitre/antivax-3-16054355791312032019007/image.jpg
 
    .. include:: venom/tuoitre/antivax-3-16054355791312032019007/caption
@@ -45,166 +49,38 @@ Scraped images and their captions
 
    .. include:: venom/tuoitre/photo-1-16061876082791863473175/caption
 
+.. figure:: venom/tuoitre/phan-phoi-anh-2-1606448711322483159445/image.jpg
+
+   .. include:: venom/tuoitre/phan-phoi-anh-2-1606448711322483159445/caption
+
 .. figure:: venom/tuoitre/photo-1-16032624202431133977485/image.jpg
 
    .. include:: venom/tuoitre/photo-1-16032624202431133977485/caption
 
-.. figure:: venom/tuoitre/download-8-16019624573541598004097/image.jpeg
+.. figure:: venom/tuoitre/astrazeneca-anh-1-16064509099701444106986/image.jpg
 
-   .. include:: venom/tuoitre/download-8-16019624573541598004097/caption
+   .. include:: venom/tuoitre/astrazeneca-anh-1-16064509099701444106986/caption
 
-.. figure:: venom/tuoitre/nicolas-1601869503171930832001/image.jpg
+.. figure:: venom/tuoitre/astrazeneca-anh-4-1606451193171603508826/image.jpg
 
-   .. include:: venom/tuoitre/nicolas-1601869503171930832001/caption
+   .. include:: venom/tuoitre/astrazeneca-anh-4-1606451193171603508826/caption
+
+.. figure:: venom/tuoitre/2020-11-19t094711z65980154rc296k9zb0mrrtrmadp3health-coronavirus-russia-vaccine-1606219898198824995818/image.jpg
+
+   .. include:: venom/tuoitre/2020-11-19t094711z65980154rc296k9zb0mrrtrmadp3health-coronavirus-russia-vaccine-1606219898198824995818/caption
+
+.. figure:: venom/tuoitre/phan-phoi-anh-3-1606448711315712485949/image.jpg
+
+   .. include:: venom/tuoitre/phan-phoi-anh-3-1606448711315712485949/caption
+
+.. figure:: venom/tuoitre/astrazeneca-anh-3-16064511660502118065691/image.jpg
+
+   .. include:: venom/tuoitre/astrazeneca-anh-3-16064511660502118065691/caption
+
+.. figure:: venom/tuoitre/vac-xin-covid-19-my-1604933185089363301960/image.jpg
+
+   .. include:: venom/tuoitre/vac-xin-covid-19-my-1604933185089363301960/caption
 
 .. figure:: venom/tuoitre/2020-09-25t020947z740425807rc2e5j9j6lsbrtrmadp3health-coronavirus-usa-16019601375161271836815/image.jpg
 
    .. include:: venom/tuoitre/2020-09-25t020947z740425807rc2e5j9j6lsbrtrmadp3health-coronavirus-usa-16019601375161271836815/caption
-
-.. figure:: venom/tuoitre/photo-1-1599543403772646666043/image.jpg
-
-   .. include:: venom/tuoitre/photo-1-1599543403772646666043/caption
-
-.. figure:: venom/vnexpress/nghien-cuu-vaccine-4422-1606138853/image.jpg
-
-   .. include:: venom/vnexpress/nghien-cuu-vaccine-4422-1606138853/caption
-
-.. figure:: venom/vnexpress/merlin-177506904-a5ef138b-1f68-6253-4625-1605673203/image.jpg
-
-   .. include:: venom/vnexpress/merlin-177506904-a5ef138b-1f68-6253-4625-1605673203/caption
-
-.. figure:: venom/vnexpress/7360-1606191821-1606191880-8695-1606192004/image.jpg
-
-   .. include:: venom/vnexpress/7360-1606191821-1606191880-8695-1606192004/caption
-
-.. figure:: venom/vnexpress/28VIRUS-MODERNA-jumbo-3-2856-1605582590/image.jpg
-
-   .. include:: venom/vnexpress/28VIRUS-MODERNA-jumbo-3-2856-1605582590/caption
-
-.. figure:: venom/vnexpress/download-13-jpeg-1605534666-9692-1605534740/image.jpg
-
-   .. include:: venom/vnexpress/download-13-jpeg-1605534666-9692-1605534740/caption
-
-.. figure:: venom/vnexpress/tnv-Oxford1-4059-1606185937/image.jpg
-
-   .. include:: venom/vnexpress/tnv-Oxford1-4059-1606185937/caption
-
-.. figure:: venom/vnexpress/merlin-179814729-79bd3373-91d1-2034-5672-1605771710/image.jpg
-
-   .. include:: venom/vnexpress/merlin-179814729-79bd3373-91d1-2034-5672-1605771710/caption
-
-.. figure:: venom/vnexpress/merlin-180213495-1db99cf7-de7f-8558-8386-1606462482/image.jpg
-
-   .. include:: venom/vnexpress/merlin-180213495-1db99cf7-de7f-8558-8386-1606462482/caption
-
-.. figure:: venom/vnexpress/Vaccine-Covid-19-4-1593609617-3429-3610-1605660010/image.jpg
-
-   .. include:: venom/vnexpress/Vaccine-Covid-19-4-1593609617-3429-3610-1605660010/caption
-
-.. figure:: venom/vnexpress/merlin-180249912-6c8612d4-3681-8148-6350-1606441959/image.jpg
-
-   .. include:: venom/vnexpress/merlin-180249912-6c8612d4-3681-8148-6350-1606441959/caption
-
-.. figure:: venom/vnexpress/https-d1e00ek4ebabms-cloudfron-6899-4614-1606188492/image.jpg
-
-   .. include:: venom/vnexpress/https-d1e00ek4ebabms-cloudfron-6899-4614-1606188492/caption
-
-.. figure:: venom/vnexpress/hypatia-h-cbe3c2fea0714bd06390-9020-8437-1605691796/image.jpg
-
-   .. include:: venom/vnexpress/hypatia-h-cbe3c2fea0714bd06390-9020-8437-1605691796/caption
-
-.. figure:: venom/vnexpress/2020-11-09t000000z-735079080-m-3991-4313-1606289855/image.jpg
-
-   .. include:: venom/vnexpress/2020-11-09t000000z-735079080-m-3991-4313-1606289855/caption
-
-.. figure:: venom/vnexpress/75916631-1486-1593504552-16061-6051-8147-1606119833/image.jpg
-
-   .. include:: venom/vnexpress/75916631-1486-1593504552-16061-6051-8147-1606119833/caption
-
-.. figure:: venom/vnexpress/file-photo-a-test-tube-labelle-3491-8978-1606449990/image.jpg
-
-   .. include:: venom/vnexpress/file-photo-a-test-tube-labelle-3491-8978-1606449990/caption
-
-.. figure:: venom/vnexpress/merlin-172652589-6bf21125-3f3b-9322-7202-1605979842/image.jpg
-
-   .. include:: venom/vnexpress/merlin-172652589-6bf21125-3f3b-9322-7202-1605979842/caption
-
-.. figure:: venom/vnexpress/cach-cac-nha-khoa-hoc-phat-trien-vaccine-song-1603363349/image.jpg
-
-   .. include:: venom/vnexpress/cach-cac-nha-khoa-hoc-phat-trien-vaccine-song-1603363349/caption
-
-.. figure:: venom/vnexpress/125958717-139896934132874-1744-7480-3779-1605855119/image.jpg
-
-   .. include:: venom/vnexpress/125958717-139896934132874-1744-7480-3779-1605855119/caption
-
-.. figure:: venom/vnexpress/thu-vaccine-1606099055-7400-1606099208/image.jpg
-
-   .. include:: venom/vnexpress/thu-vaccine-1606099055-7400-1606099208/caption
-
-.. figure:: venom/vnexpress/merlin-179776443-9bd3db53-09da-1812-7608-1605771710/image.jpg
-
-   .. include:: venom/vnexpress/merlin-179776443-9bd3db53-09da-1812-7608-1605771710/caption
-
-.. figure:: venom/vnexpress/merlin-179916549-77274b9d-a222-1534-5686-1605582590/image.jpg
-
-   .. include:: venom/vnexpress/merlin-179916549-77274b9d-a222-1534-5686-1605582590/caption
-
-.. figure:: venom/vnexpress/2020-11-09t000000z-735079080-m-3255-1839-1605708633/image.jpg
-
-   .. include:: venom/vnexpress/2020-11-09t000000z-735079080-m-3255-1839-1605708633/caption
-
-.. figure:: venom/vnexpress/merlin-180249828-7c1cc298-3228-1616-6010-1606374996/image.jpg
-
-   .. include:: venom/vnexpress/merlin-180249828-7c1cc298-3228-1616-6010-1606374996/caption
-
-.. figure:: venom/vnexpress/merlin-174615984-50ae2e32-a55f-3805-7535-1605780744/image.jpg
-
-   .. include:: venom/vnexpress/merlin-174615984-50ae2e32-a55f-3805-7535-1605780744/caption
-
-.. figure:: venom/vnexpress/106801456-1606219164685-gettyi-9961-3444-1606271135/image.jpg
-
-   .. include:: venom/vnexpress/106801456-1606219164685-gettyi-9961-3444-1606271135/caption
-
-.. figure:: venom/vnexpress/screen-shot-2020-11-22-at-00-2-1464-9109-1605979842/image.png
-
-   .. include:: venom/vnexpress/screen-shot-2020-11-22-at-00-2-1464-9109-1605979842/caption
-
-.. figure:: venom/vnexpress/im-264611-1606372930-7892-1606373013/image.jpg
-
-   .. include:: venom/vnexpress/im-264611-1606372930-7892-1606373013/caption
-
-.. figure:: venom/vnexpress/201119-vaccine-trial-ew-732p-b-5453-4110-1606289855/image.jpg
-
-   .. include:: venom/vnexpress/201119-vaccine-trial-ew-732p-b-5453-4110-1606289855/caption
-
-.. figure:: venom/vnexpress/125345952-370088487556053-5583-5022-4057-1605772011/image.jpg
-
-   .. include:: venom/vnexpress/125345952-370088487556053-5583-5022-4057-1605772011/caption
-
-.. figure:: venom/vnexpress/00vaccine-supply-moderna-jumbo-1235-7759-1605771709/image.jpg
-
-   .. include:: venom/vnexpress/00vaccine-supply-moderna-jumbo-1235-7759-1605771709/caption
-
-.. figure:: venom/vnexpress/tiem-thu-vaccine-1354-1606138853/image.jpg
-
-   .. include:: venom/vnexpress/tiem-thu-vaccine-1354-1606138853/caption
-
-.. figure:: venom/vnexpress/sdfhgsdhsgh-png-1606212720-3393-1606212835/image.png
-
-   .. include:: venom/vnexpress/sdfhgsdhsgh-png-1606212720-3393-1606212835/caption
-
-.. figure:: venom/vnexpress/104429831119509850417086924069-3420-2463-1605498194/image.jpg
-
-   .. include:: venom/vnexpress/104429831119509850417086924069-3420-2463-1605498194/caption
-
-.. figure:: venom/vnexpress/2020-10-30T210259Z-392434681-R-5664-9655-1605748111/image.jpg
-
-   .. include:: venom/vnexpress/2020-10-30T210259Z-392434681-R-5664-9655-1605748111/caption
-
-.. figure:: venom/vnexpress/126140804-443425593717020-3037-1120-5387-1606189405/image.jpg
-
-   .. include:: venom/vnexpress/126140804-443425593717020-3037-1120-5387-1606189405/caption
-
-.. figure:: venom/vnexpress/vaccine-oxford-7537-1606207139/image.jpg
-
-   .. include:: venom/vnexpress/vaccine-oxford-7537-1606207139/caption
